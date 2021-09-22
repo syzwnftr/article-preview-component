@@ -24,10 +24,10 @@ main {
 }
 
 .container {
-  /* border: 1px solid black; */
+  /* outline: 1px solid black; */
   max-width: 85%;
   margin: 5rem auto;
-  padding-bottom: 1.8rem;
+  /* padding-bottom: 1.8rem; */
   border-radius: 1rem;
   background-color: white;
   box-shadow: 0 2px 30px 1px rgba(0, 0, 0, 0.2);
@@ -67,8 +67,12 @@ main {
 }
 
 .share {
+  /* outline: 1px solid pink; */
   display: flex;
   align-items: center;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: relative;
 }
 
 .info {
@@ -95,4 +99,58 @@ main {
   padding: 0.5rem;
   border-radius: 50%;
   background-color: var(--lightGrayishBlue);
+  cursor: pointer;
+}
+
+.parentShare {
+  display: flex;
+  flex-direction: column;
+}
+
+.shareComponent {
+  display: none;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: var(--darkGrayishBlue);
+  transition: 0.5s;
+  visibility: hidden;
+}
+
+.socMedIcons {
+  /* outline: 1px solid pink; */
+  display: flex;
+  align-items: center;
+}
+
+.socMedIcons > * {
+  margin-right: 1rem;
+}
+
+.socMedIcons p {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--desDarkBlue);
+}
+
+.bgColor {
+  background-color: var(--grayishBlue);
+}
+
+.orderChange {
+  order: -1;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  visibility: visible;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: var(--darkGrayishBlue);
+  transition: 0.5s;
+}
+
+.noDisplay {
+  display: none;
+  visibility: hidden;
 }
