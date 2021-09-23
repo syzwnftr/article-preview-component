@@ -154,3 +154,48 @@ main {
   display: none;
   visibility: hidden;
 }
+
+@media (min-width: 50rem) {
+  main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    display: flex;
+    max-width: 90%;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .hero-img {
+    /* outline: 1px solid pink; */
+    flex-basis: 40%;
+    margin-bottom: 0;
+  }
+
+  .hero-img img {
+    border-bottom-left-radius: 1rem;
+    border-top-right-radius: 0rem;
+    width: 100%;
+  }
+
+  .forFlex {
+    /* outline: 1px solid green; */
+    flex-basis: 60%;
+  }
+
+  .heroText {
+    margin-bottom: 0;
+  }
+
+  .share {
+    padding-bottom: 0;
+  }
+
+  .shareComponent {
+    padding-bottom: 0;
+  }
+}
