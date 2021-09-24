@@ -76,6 +76,11 @@ main {
   padding-bottom: 1rem;
 }
 
+.componentOneDeactivated {
+  display: none;
+  visibility: hidden;
+}
+
 .info {
   display: flex;
   align-items: center;
@@ -103,14 +108,18 @@ main {
 }
 
 .componentTwo {
-  display: flex;
+  display: none;
   justify-content: space-between;
   padding-top: 1rem;
   padding-bottom: 1rem;
   background-color: var(--darkGrayishBlue);
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
-  display: none;
+}
+
+.componentTwoActive {
+  display: flex;
+  order: -1;
 }
 
 .socMedIcons {
@@ -165,24 +174,6 @@ main {
   display: flex;
   transform: translateY(-50px);
 }
-
-/* .orderChange {
-  order: -1;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  visibility: visible;
-  display: flex;
-  justify-content: space-between;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  background-color: var(--darkGrayishBlue);
-  transition: 0.5s;
-} 
-
-.noDisplay {
-  display: none;
-  visibility: hidden;
-} */
 
 @media (min-width: 28.125rem) {
   .hero-img {
