@@ -1,27 +1,27 @@
 const componentOne = document.querySelector('.componentOne');
-const componentThree = document.querySelector('.componentThree');
 const componentTwo = document.querySelector('.componentTwo');
 
-const shareIcon = document.querySelector('.shareIcon');
+const shareBtn = document.querySelector('.shareIcon');
+const shareBtn2 = document.querySelector('.shareIcon2');
 
-let widthLimitDesktop = 1200;
-let widthLimitMobile = 375;
-let windowWidth = window.innerWidth;
+let count = 0;
 
+function clicked() {
+    if (count === 0) {
+        componentTwo.classList.add('componentTwoActive');
+        componentOne.classList.add('componentOneDeactivated');
+        count = 1;
+    } else {
+        componentTwo.classList.remove('componentTwoActive');
+        componentOne.classList.remove('componentOneDeactivated');
+        count = 0;
+    }
 
-if (windowWidth >= widthLimitDesktop) {
-   shareIcon.addEventListener('click', function() {
-    componentThree.classList.add('componentThreeActive');
-    componentOne.classList.remove('componentOneDeactivated');
-    componentTwo.classList.remove('componentTwoActive');
-   });
+    e.preventDefault();
 }
 
-if (windowWidth >= widthLimitMobile && windowWidth <= widthLimitDesktop) {
-    shareIcon.addEventListener('click', function() {
-        componentOne.classList.add('componentOneDeactivated');
-        componentTwo.classList.add('componentTwoActive');
-        componentThree.classList.remove('componentThreeActive');
-    });
- }
- 
+
+shareBtn.addEventListener('click', clicked)
+
+shareBtn2.addEventListener('click', clicked);
+
