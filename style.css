@@ -24,25 +24,20 @@ main {
 }
 
 .container {
-  /* outline: 1px solid black; */
+  outline: 1px solid black;
   max-width: 85%;
   margin: 5rem auto;
-  /* padding-bottom: 1.8rem; */
   border-radius: 1rem;
   background-color: white;
   box-shadow: 0 2px 30px 1px rgba(0, 0, 0, 0.2);
 }
 
 .hero-img {
-  /* border: 1px solid green; */
-  margin-bottom: 2rem;
-}
-
-.hero-img img {
   width: 100%;
+  height: 200px;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  /* height: 200px; */
+  margin-bottom: 2rem;
 }
 
 .paddingGlobal {
@@ -66,13 +61,19 @@ main {
   line-height: 1.7;
 }
 
-.share {
-  /* outline: 1px solid pink; */
+.componentParent {
   display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.componentOne {
+  /* outline: 1px solid green; */
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  position: relative;
 }
 
 .info {
@@ -99,22 +100,17 @@ main {
   padding: 0.5rem;
   border-radius: 50%;
   background-color: var(--lightGrayishBlue);
-  cursor: pointer;
 }
 
-.parentShare {
+.componentTwo {
   display: flex;
-  flex-direction: column;
-}
-
-.shareComponent {
-  display: none;
   justify-content: space-between;
   padding-top: 1rem;
   padding-bottom: 1rem;
   background-color: var(--darkGrayishBlue);
-  transition: 0.5s;
-  visibility: hidden;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  display: none;
 }
 
 .socMedIcons {
@@ -137,7 +133,40 @@ main {
   background-color: var(--grayishBlue);
 }
 
-.orderChange {
+.componentThree {
+  justify-content: center;
+  width: 250px;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  background-color: var(--darkGrayishBlue);
+  border-radius: 0.7rem;
+  transition: 0.5s;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateY(0px);
+  display: none;
+}
+
+.componentThree::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0 10px;
+  border-color: var(--darkGrayishBlue) transparent transparent transparent;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.componentThreeActive {
+  display: flex;
+  transform: translateY(-50px);
+}
+
+/* .orderChange {
   order: -1;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
@@ -148,14 +177,26 @@ main {
   padding-bottom: 1rem;
   background-color: var(--darkGrayishBlue);
   transition: 0.5s;
-}
+} 
 
 .noDisplay {
   display: none;
   visibility: hidden;
+} */
+
+@media (min-width: 28.125rem) {
+  .hero-img {
+    height: auto;
+  }
 }
 
-@media (min-width: 50rem) {
+@media (min-width: 34.375rem) {
+  .container {
+    max-width: 29.219rem;
+  }
+}
+
+@media (min-width: 75rem) {
   main {
     min-height: 100vh;
     display: flex;
@@ -164,26 +205,23 @@ main {
   }
   .container {
     display: flex;
-    max-width: 90%;
+    max-width: 75%;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .hero-img {
-    /* outline: 1px solid pink; */
+    height: auto;
     flex-basis: 40%;
-    margin-bottom: 0;
-  }
-
-  .hero-img img {
     border-bottom-left-radius: 1rem;
     border-top-right-radius: 0rem;
-    width: 100%;
+    margin-bottom: 0;
   }
 
   .forFlex {
     /* outline: 1px solid green; */
+    margin-top: 1rem;
     flex-basis: 60%;
   }
 
@@ -191,11 +229,22 @@ main {
     margin-bottom: 0;
   }
 
-  .share {
-    padding-bottom: 0;
+  .heroText h1 {
+    font-size: 1.5rem;
+    padding-right: 5rem;
   }
 
-  .shareComponent {
-    padding-bottom: 0;
+  .heroText p {
+    padding-right: 7.5rem;
+  }
+
+  .componentOne {
+    padding-right: 7rem;
+  }
+}
+
+@media (min-width: 76rem) {
+  .container {
+    max-width: 56.25rem;
   }
 }

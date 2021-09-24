@@ -1,8 +1,6 @@
-const socialMediaDiv = document.querySelector('.shareComponent');
-const infoShareDiv = document.querySelector('.share')
+const componentThree = document.querySelector('.componentThree');
 const shareIcon = document.querySelector('.shareIcon');
 
 shareIcon.addEventListener('click', function() {
-    socialMediaDiv.classList.add('orderChange');
-    infoShareDiv.classList.add('noDisplay');
-})
+    componentThree.classList.add('componentThreeActive');
+});
