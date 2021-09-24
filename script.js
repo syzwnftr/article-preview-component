@@ -1,11 +1,27 @@
+const componentOne = document.querySelector('.componentOne');
 const componentThree = document.querySelector('.componentThree');
+const componentTwo = document.querySelector('.componentTwo');
+
 const shareIcon = document.querySelector('.shareIcon');
 
-let widthLimit = 1200;
+let widthLimitDesktop = 1200;
+let widthLimitMobile = 375;
 let windowWidth = window.innerWidth;
 
-shareIcon.addEventListener('click', function() {
-    if(windowWidth >= widthLimit ) {
-        componentThree.classList.add('componentThreeActive');
-    }  
-});
+
+if (windowWidth >= widthLimitDesktop) {
+   shareIcon.addEventListener('click', function() {
+    componentThree.classList.add('componentThreeActive');
+    componentOne.classList.remove('componentOneDeactivated');
+    componentTwo.classList.remove('componentTwoActive');
+   });
+}
+
+if (windowWidth >= widthLimitMobile && windowWidth <= widthLimitDesktop) {
+    shareIcon.addEventListener('click', function() {
+        componentOne.classList.add('componentOneDeactivated');
+        componentTwo.classList.add('componentTwoActive');
+        componentThree.classList.remove('componentThreeActive');
+    });
+ }
+ 
