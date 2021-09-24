@@ -241,18 +241,19 @@ main {
 
   .componentTwo {
     justify-content: center;
-    /* width: 250px; */
-    /* padding-top: 0.8rem;
-    padding-bottom: 0.8rem; */
     padding: 1rem;
     padding-left: 1.8rem;
     background-color: var(--darkGrayishBlue);
     border-radius: 0.7rem;
-    transition: 0.5s;
+    transition: all 0.5s ease;
     position: absolute;
     right: 18px;
     top: -50px;
-    display: none;
+    display: flex;
+    transform: translateY(50px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .componentTwo::after {
@@ -269,8 +270,11 @@ main {
   }
 
   .componentTwoActive {
-    display: flex;
+    /* display: flex; */
     order: 0;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
   }
 
   .shareIcon2 {
