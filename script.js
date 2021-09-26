@@ -17,7 +17,6 @@ function clicked() {
         count = 0;
     }
 
-    e.preventDefault();
 }
 
 
